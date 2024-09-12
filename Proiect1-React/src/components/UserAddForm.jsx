@@ -1,5 +1,6 @@
 import React from 'react';
 import './UserAddForm.css';
+import './Button.css'
 class UserAddForm extends React.Component {
     constructor(props) {
         super(props);
@@ -51,7 +52,7 @@ class UserAddForm extends React.Component {
                     onChange={(event) => this.updateIsGoldClient(event)}
                 />
 
-                <input type="submit" value="Introdu utilizatorul"/>
+                <input type="submit"  className="user-add-button" value="Add user"/>
             </form>
         )
     }

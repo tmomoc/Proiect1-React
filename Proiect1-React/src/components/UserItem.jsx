@@ -2,7 +2,8 @@ import React from 'react';
 
 
 function UserItem(props) {
-    const {name, email, isGoldClient,salary,image} = props;
+    const {id,name, email, isGoldClient,salary,image,onDelete} = props;
+
 
     return (
         <div>
@@ -14,6 +15,7 @@ function UserItem(props) {
             }
             <p>{salary}</p>
             <img src={image} alt="user"  style={{ maxWidth: '20%', height: 'auto'}} />
+            <button onClick={() =>onDelete(id)}>Delete user</button>
         </div>
     );
 }

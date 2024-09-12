@@ -4,6 +4,7 @@ import UserAddForm from './components/UserAddForm';
 import './App.css';
 import userImg from './images/output.png'
 import PostList from './components/PostList';
+import './components/Button.css'
 
 class App extends React.Component {
   constructor() {
@@ -74,16 +75,25 @@ class App extends React.Component {
     });
   }
 
+  deleteUser = (id) => {
+    if (window.confirm('Do you want remove this user?')) {
+        this.setState(prevState => ({
+            users: prevState.users.filter(user => user.id !== id)
+        }));
+    }
+};
+
+
   render() {
     return(
       <div className="app" style={{background: this.state.background,color:this.state.color}}>
         <h1>Admin panel - Proiectul 1</h1>
 
         <UserAddForm submitAddForm={(event, name, email, isGoldClient) => this.submitAddForm(event, name, email, isGoldClient)}/>
-        <UserList users={this.state.users}/>
+        <UserList users={this.state.users} onDelete={this.deleteUser}/>
         <PostList posts = {this.state.posts} />
 
-        <input type="color" onChange={(event) => this.changeColor(event)}/>
+        <input type="color" className='color-change' onChange={(event) => this.changeColor(event)}/>
         <input type="color" onChange={(event) => this.changeColorText(event)}/>
       </div>
     );

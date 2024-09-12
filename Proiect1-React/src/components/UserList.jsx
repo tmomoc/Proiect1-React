@@ -1,35 +1,37 @@
 import React, { useState } from 'react';
 import UserItem from './UserItem';
+import './Button.css'
 
-function UserList(props) {
-    const { users } = props;
-    const [viewUserList,setViewUserList] = useState(false);
+function UserList({ users,onDelete }) {
+    const [viewUserList, setViewUserList] = useState(false);
 
-    const toogleViewUserList =() =>{
+    const toggleViewUserList = () => {
         setViewUserList(!viewUserList);
-    }
+    };
+
 
     return (
         <div>
-            <button onClick={toogleViewUserList}>
-            {viewUserList ? 'Ascunde Lista utilizator' : 'Afișează Lista utilizator'}
+            <button onClick={toggleViewUserList} className='user-hide-list'>
+                {viewUserList ? 'Hide user list' : 'View user list'}
             </button>
-            { viewUserList && (
-            <div>
-                <h2>Lista utilizatorilor:</h2>
-                { users.map((user, index) => {
-                    return <UserItem
-                        id={ user.id }
-                        name={ user.name }
-                        email={ user.email }
-                        isGoldClient={ user.isGoldClient }
-                        salary={user.salary}
-                        image={user.image}      
-                        key={ index }
-                    />
-                })}
-            </div>
-       )}
+            {viewUserList && (
+                <div>
+                    <h2>User list:</h2>
+                    {users.map(user => (
+                        <UserItem
+                            key={user.id}
+                            id={user.id}
+                            name={user.name}
+                            email={user.email}
+                            isGoldClient={user.isGoldClient}
+                            salary={user.salary}
+                            image={user.image}
+                            onDelete={onDelete} 
+                        />
+                    ))}
+                </div>
+            )}
         </div>
     );
 }

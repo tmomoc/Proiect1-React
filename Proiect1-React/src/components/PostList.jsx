@@ -1,26 +1,24 @@
 import React, { useState } from 'react';
 import PostItem from './PostItem';
+import './Button.css'
 
 function PostList(props) {
   const { posts } = props;
   const [viewPostList, setViewPostList] = useState(false);
 
-  // Funcția care comută vizibilitatea listei de postări
   const toggleViewPostList = () => {
     setViewPostList(!viewPostList);
   };
 
   return (
     <div>
-      {/* Butonul care comută afișarea listei */}
-      <button onClick={toggleViewPostList}>
-        {viewPostList ? 'Ascunde Lista Postări' : 'Afișează Lista Postări'}
+      <button onClick={toggleViewPostList} className='post-hide-list'>
+        {viewPostList ? 'Hide post list' : 'View post list'}
       </button>
 
-      {/* Afișarea condiționată a listei de postări */}
       {viewPostList && (
         <div>
-          <h1>Lista postări:</h1>
+          <h1>Post List:</h1>
           {
             posts.map((post, index) => (
               <PostItem
