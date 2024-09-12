@@ -81,7 +81,7 @@ class App extends React.Component {
 
         <UserAddForm submitAddForm={(event, name, email, isGoldClient) => this.submitAddForm(event, name, email, isGoldClient)}/>
         <UserList users={this.state.users}/>
-        {/* <PostList posts = {this.state.posts} /> */}
+        <PostList posts = {this.state.posts} />
 
         <input type="color" onChange={(event) => this.changeColor(event)}/>
         <input type="color" onChange={(event) => this.changeColorText(event)}/>

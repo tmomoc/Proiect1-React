@@ -1,7 +1,7 @@
 import React from 'react';
 
 function PostItem(props)  {
-    const [title,body] = props;
+    const {title,body} = props;
 
     return(
         <div>
@@ -11,6 +11,5 @@ function PostItem(props)  {
         </div>
     );
 }
-
 
 export default PostItem;
