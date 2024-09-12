@@ -10,10 +10,10 @@ function PostList(props){
             {
                 posts.map((post,index) =>{
                     return <PostItem
-                    id = {post.id}
-                    title = {post.title}
-                    body = {post.body}
-                    key ={index}
+                        id = {post.id}
+                        title = {post.title}
+                        body = {post.body}
+                        key ={index}
                     />
                 })
             }
