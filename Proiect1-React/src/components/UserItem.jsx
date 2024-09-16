@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Button.css'
 
 function UserItem(props) {
     const {id,name, email, isGoldClient,salary,image,onDelete} = props;
@@ -15,7 +15,7 @@ function UserItem(props) {
             }
             <p>{salary}</p>
             <img src={image} alt="user"  style={{ maxWidth: '20%', height: 'auto'}} />
-            <button onClick={() =>onDelete(id)}>Delete user</button>
+            <button onClick={() =>onDelete(id)} className='user-delete'>Delete user</button>
         </div>
     );
 }

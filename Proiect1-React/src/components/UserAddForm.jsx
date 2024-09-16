@@ -1,6 +1,7 @@
 import React from 'react';
 import './UserAddForm.css';
 import './Button.css'
+
 class UserAddForm extends React.Component {
     constructor(props) {
         super(props);
@@ -22,6 +23,7 @@ class UserAddForm extends React.Component {
     updateIsGoldClient(event) {
         this.setState({isGoldClient: event.target.checked});
     }
+
 
     render() {
         const {name, email, isGoldClient} = this.state;

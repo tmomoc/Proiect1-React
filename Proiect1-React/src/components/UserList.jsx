@@ -11,12 +11,13 @@ function UserList({ users,onDelete }) {
 
 
     return (
-        <div>
+        <div >
             <button onClick={toggleViewUserList} className='user-hide-list'>
                 {viewUserList ? 'Hide user list' : 'View user list'}
             </button>
             {viewUserList && (
-                <div>
+                <div className='user-list' >
+              
                     <h2>User list:</h2>
                     {users.map(user => (
                         <UserItem

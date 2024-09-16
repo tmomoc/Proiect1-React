@@ -3,14 +3,18 @@ h2 {
 }
 
 .user-add-form {
+   
     display: flex;
     flex-direction: column;
     margin:30px;
     padding-right: 40%;
+    left: 150px;
+
+
 
 }
 
 .user-add-form input {
     max-width: 30%;
-
+    float:left;
 }
