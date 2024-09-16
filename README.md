@@ -1,26 +1,34 @@
-# Proiect1-React
-## Cerințe de implementat
+#  Project: User Management and Posts Viewer
 
-### Done
-1. Adăugați două proprietăți noi pentru fiecare user: salariu și imagine. Dați valori pentru acestea și afișați-le pe ecran.
+## App Features Overview
+1. Add New Users:
 
-### Done
+Users can be added with properties such as name, email, salary, isGoldClient, and image.
+The app validates the name and email fields. The name cannot be empty, and the email must contain both @ and . characters.
+Each user entry includes the salary and an optional image. If an image is not provided, a placeholder is displayed.
 
-2. Adăugați un nou input de tip culoare. La schimbarea culorii lui, culoarea textului pentru întreaga aplicație se va schimba.
+2. Color Customization:
 
-### Done
+A color input allows the user to change the text color across the application dynamically.
 
-3. Creați două componente noi, numite PostList și PostItem. PostList va fi o listă de componente de tip PostItem. În componenta PostList, atunci când este afișată pe ecran, faceți un request catre endpoint-ul /posts, de pe JSON placeholder, afișând datele preluate. Practic, o singură dată veți face request către url-ul https://jsonplaceholder.typicode.com/posts.
+3. Post Retrieval:
 
+Posts are fetched from the external API endpoint https://jsonplaceholder.typicode.com/posts and displayed in a separate section using two new components: PostList and PostItem.
+The app retrieves posts only once, and the data is then rendered using the PostList component, which includes individual PostItem components.
 
-### Done
+4. Toggle Between Users and Posts:
 
-4. Creați două butoane: Afișează useri și Afișează postări. Implicit, vor fi afișați userii. La click pe oricare din cele două butoane, va fi actualizată lista afișată pe ecran. Dacă dăm click pe butonul Afișează useri va fi afișată lista userilor, dacă dăm click pe Afișează postări va fi afișată lista postărilor.
+The app has two buttons: "Show Users" and "Show Posts". By default, the user list is displayed. When "Show Posts" is clicked, the list of posts is displayed.
+Clicking "Show Users" switches back to displaying the user list.
 
-### Done
+5. Delete Users:
 
-5. Adăugați pe fiecare user un buton de ștergere.
+Each user entry includes a "Delete" button that removes the user from the list.
 
-6.  puțină validare a datelor. Spre exemplu, să nu poată fi introdus un nume gol, iar emailul să conțină caracterele '@' și '.' .
+6. Data Validation:
 
-7. Stilizați aplicația, astfel încât să arate mai frumos.
+Basic form validation is implemented to ensure that users cannot submit an empty name, and the email must follow a valid format (containing @ and .).
+
+7. Stylized UI:
+
+The app is styled for a clean, modern appearance using CSS. Buttons, input fields, and lists are neatly aligned, and user-friendly error messages are displayed for invalid data submissions.
